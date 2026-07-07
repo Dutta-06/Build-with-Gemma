@@ -416,6 +416,10 @@ document.addEventListener('DOMContentLoaded', () => {
       formMessage.style.display = 'block';
 
       try {
+        if (!supabase) {
+          throw new Error("Supabase is not configured. Please add the GitHub secrets.");
+        }
+        
         // 1. Upload Resume
         const fileExt = resumeFile.name.split('.').pop();
         const fileName = `${data.teamName.replace(/\s+/g, '-')}-${Date.now()}.${fileExt}`;

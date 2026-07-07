@@ -18,8 +18,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  /* Remove solid background to see starfield */
-  background: transparent;
+  /* Remove solid background to see starfield, but keep a fallback just in case canvas fails */
+  background-color: var(--bg-color);
 }
 
 /* Starfield Canvas */
