@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/build-with-gemma-lockup.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIMS-DTU Hackathon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+    
+    <script type="importmap">
+    {
+      "imports":{
+        "three":"https://unpkg.com/three@0.143.0/build/three.module.js",
+        "three/addons/":"https://unpkg.com/three@0.143.0/examples/jsm/"
+      }
+    }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+
+    <main class="story-container">
+      
+      <!-- Scene 1: Intro -->
+      <section class="scene scene-intro" id="scene-intro">
+        <div class="intro-content" style="text-align: center; display: flex; flex-direction: column; align-items: center; margin-top: -15vh;">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; margin-bottom: 1.5rem;">
+            <img src="/gemma-logo.png" alt="Gemma" style="height: 80px;" />
+            <span style="font-size: 2.5rem; font-weight: 300; font-style: italic;">&amp;</span>
+            <img src="/aims-dtu-logo.png" alt="AIMS-DTU Logo" style="height: 160px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));" />
+          </div>
+          <p class="intro-subtitle" style="font-style: italic; font-size: 1.25rem; margin-bottom: 1.5rem;">bring to you</p>
+          <img src="/build-with-gemma-lockup.png" alt="Build with Gemma" style="height: 400px; max-width: 90vw; object-fit: contain; margin-bottom: 1rem; filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));" />
+          <p class="intro-description" style="max-width: 800px; font-size: 1.25rem; line-height: 1.6; margin-top: 2rem; color: var(--text-color);">
+            The next generation of open models is here. Welcome to Build with Gemma - AIMS DTU, a fast-paced, 1-day in-person hackathon where you'll get hands-on with the most capable open models from Google DeepMind.
+          </p>
+        </div>
+      </section>
+
+      <!-- Scene 2: The Details -->
+      <section class="scene scene-oath" id="scene-oath">
+        <div class="oath-container" style="display: flex; align-items: center; justify-content: space-between; gap: 3rem; width: 100%; max-width: 1200px; margin: 0 auto; text-align: left;">
+          <div class="oath-lines" style="flex: 1 1 auto;">
+            <p class="oath-line line-1" style="font-size: 1.5rem; margin-bottom: 2rem; line-height: 1.6;">With the release of Gemma 4, a new family of open models is officially in your hands. Leverage local frontier intelligence, native function calling, and multimodal understanding to tackle core developer challenges.</p>
+            <p class="oath-line line-2" style="font-size: 1.5rem; margin-bottom: 2rem; line-height: 1.6;">Tell a story. Show us the problem and how your Gemma 4 application solves it in a powerful way.</p>
+            <p class="oath-line line-3" style="font-size: 1.5rem; line-height: 1.6;">While your technical execution is vital, the ability to communicate your vision through a compelling writeup and pitch is what will set the winners apart.</p>
+          </div>
+          <div class="oath-logo oath-line line-4" style="flex: 0 0 400px; display: flex; justify-content: center;">
+            <img src="/gemma-4-wordmark.png" alt="Gemma 4" style="width: 100%; object-fit: contain; filter: drop-shadow(0 0 20px rgba(255,255,255,0.2));" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Scene 3: Tracks -->
+      <section class="scene scene-tracks" id="scene-tracks">
+        <div class="tracks-content" style="max-width: 1000px; margin: 0 auto; text-align: left;">
+          <h2 class="section-title">Hackathon Tracks</h2>
+          
+          <div class="tracks-list" style="margin-top: 3rem;">
+            <div class="track-item" style="margin-bottom: 3rem;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
+                <h3 style="font-size: 1.75rem; color: var(--primary); margin: 0;">Track 1: AI for Legal Assistance</h3>
+                <span style="font-size: 1.5rem; font-weight: bold; color: white;">$1000</span>
+              </div>
+              <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.25rem; line-height: 1.6;">Use Gemma to build a multilingual AI legal assistant that a regular citizen can talk to in their own language, describe their situation in plain terms, and walk away with a clear understanding of their rights, their options, and their next steps.</p>
+            </div>
+            
+            <div class="track-item">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
+                <h3 style="font-size: 1.75rem; color: var(--primary); margin: 0;">Track 2: AI for Public Safety</h3>
+                <span style="font-size: 1.5rem; font-weight: bold; color: white;">$1000</span>
+              </div>
+              <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.25rem; line-height: 1.6;">Traditional public safety monitoring suffers from "alarm fatigue" due to passive, high-noise surveillance that lacks semantic context, often failing to distinguish between benign activities and actual emergencies. Current systems face two critical failures: reliance on cloud-based processing creates latency and privacy risks, while "black-box" pattern matching lacks the reasoning layer needed for reliable, forensic-grade verification.</p>
+            </div>
+          </div>
+
+          <div class="event-details" style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="font-size: 1.75rem; color: var(--primary); margin-bottom: 1.5rem;">Event Details</h3>
+            <ul style="list-style-type: none; padding: 0; margin: 0; color: rgba(255, 255, 255, 0.9); font-size: 1.25rem; line-height: 2;">
+              <li><strong>Date:</strong> 15<sup>th</sup> July 2026</li>
+              <li><strong>Time:</strong> 10:00 AM – 6:00 PM</li>
+              <li><strong>Location:</strong> AB-3, Delhi Technological University, Bawana</li>
+              <li><strong>Platform:</strong> Hosted on Kaggle</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scene 4: Registration -->
+      <section class="scene scene-register" id="register">
+        <div class="register-container register-reveal">
+          <img src="/gemma-logo-color.png" alt="Build with Gemma Logo" class="form-lockup" style="height: 64px; margin-bottom: 3rem; filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));" />
+          <h2 class="section-title">Registration</h2>
+          <p class="section-subtitle">Enter your team details below.</p>
+          
+          <form id="registration-form" class="registration-form">
+            <div class="form-group">
+              <label for="teamName">Team Name</label>
+              <input type="text" id="teamName" name="teamName" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="yourName">Your Name</label>
+              <input type="text" id="yourName" name="yourName" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone No.</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email-ID</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="college">College</label>
+              <input type="text" id="college" name="college" required />
+            </div>
+
+            <div class="form-group">
+              <label for="rollNo">Roll No.</label>
+              <input type="text" id="rollNo" name="rollNo" required />
+            </div>
+
+            <div class="form-group">
+              <label for="resume">Resume (PDF)</label>
+              <input type="file" id="resume" name="resume" accept=".pdf" required style="padding-top: 0.5rem; color: rgba(255,255,255,0.8);" />
+            </div>
+
+            <div class="form-group">
+              <label>Are you willing to appear physically on 15<sup>th</sup> July 2026 for the hackathon?</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="physicalAppearance" value="yes" required />
+                  Yes
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="physicalAppearance" value="no" required />
+                  No
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="prizeAgreement" required />
+                <span>Prize money will be directly transferred to the winners' bank accounts by Gemma Team via Payoneer, and AIMS-DTU shall not be held accountable for the same. <strong>I agree to these terms</strong>.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-solid-large">Submit</button>
+            <div id="form-message" class="form-message"></div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2026 AIMS-DTU Hackathon | Odwitiyo Dutta</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

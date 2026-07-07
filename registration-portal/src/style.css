@@ -1,0 +1,298 @@
+:root {
+  --bg-color: #111111;
+  --text-color: #ededed;
+  --text-muted: #888888;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --primary: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', 'Google Sans', system-ui, -apple-system, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  /* Remove solid background to see starfield */
+  background: transparent;
+}
+
+/* Starfield Canvas */
+canvas#scene {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: -1;
+}
+
+/* Removed Navbar Styles */
+
+/* Buttons */
+.btn-solid, .btn-solid-large {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: #0a0a24;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-solid {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.btn-solid-large {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-solid:hover, .btn-solid-large:hover {
+  opacity: 0.9;
+}
+
+/* Story Container */
+.story-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.scene {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 8rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Typography & Layout */
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.section-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3rem;
+}
+
+/* Scene 1: Intro */
+.intro-content {
+  width: 100%;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.intro-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.scroll-indicator {
+  margin-top: 4rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Scene 2: The Oath */
+.oath-container {
+  width: 100%;
+}
+
+.oath-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.oath-line {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  opacity: 0.1;
+  transform: translateY(20px);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Scene 3: Tracks */
+.tracks-content {
+  width: 100%;
+}
+
+.track-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.track-item h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.track-item p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Scene 4: Registration */
+.register-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 0; /* Removed tile background, border, and blur */
+}
+
+.register-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.form-lockup {
+  height: 32px;
+  margin-bottom: 2rem;
+  display: block;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  outline: none;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
+  border-color: var(--primary);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+input[type="file"]::file-selector-button {
+  background: white;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 1rem;
+  font-family: inherit;
+  transition: opacity 0.2s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+  opacity: 0.9;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.radio-label, .checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-weight: 400;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.checkbox-group {
+  margin-top: 1rem;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  margin-top: 0.2rem;
+  cursor: pointer;
+}
+
+.form-message {
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  display: none;
+}
+
+.form-message.success {
+  display: block;
+  color: #5fe6a0;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border-color);
+  padding: 2rem;
+  margin-top: 4rem;
+  background: rgba(10, 10, 36, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .register-container {
+    padding: 2rem;
+  }
+  .scene {
+    padding: 6rem 1.5rem;
+  }
+}
