@@ -455,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (dbError) throw dbError;
 
-        formMessage.textContent = 'Registration received! We will contact you soon.';
+        formMessage.textContent = 'Thanks for registering! We will contact you if you are shortlisted after the resume screening.';
         formMessage.className = 'form-message success';
         form.reset();
 
