@@ -251,6 +251,73 @@ input[type="file"]::file-selector-button:hover {
   margin-top: 1rem;
 }
 
+/* Mobile Responsive Optimizations */
+@media (max-width: 768px) {
+  /* Intro & Hero Scale Down */
+  #scene-intro .intro-content > div:first-child {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+  #scene-intro .intro-content img[alt="Gemma"] {
+    height: 60px !important;
+  }
+  #scene-intro .intro-content img[alt="AIMS-DTU Logo"] {
+    height: 100px !important;
+  }
+  #scene-intro .intro-content span {
+    font-size: 2rem !important;
+  }
+  #scene-intro .intro-content img[alt="Build with Gemma"] {
+    height: auto !important;
+    max-height: 250px !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Details/Oath Section Stacking */
+  .oath-container {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+  .oath-logo {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    max-width: 250px !important;
+    margin: 0 auto !important;
+  }
+  .oath-line {
+    font-size: 1.25rem !important;
+  }
+
+  /* Tracks Restacking */
+  .track-item > div:first-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+  }
+  .event-details {
+    margin-top: 2rem !important;
+    padding-top: 2rem !important;
+  }
+  .event-details ul {
+    font-size: 1.1rem !important;
+  }
+
+  /* Form Container Adjustments */
+  .register-container {
+    padding: 2rem 1.5rem !important;
+    border-radius: 16px !important;
+  }
+  .form-lockup {
+    height: 48px !important;
+    margin-bottom: 2rem !important;
+  }
+  .radio-group {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+}
+
 input[type="radio"], input[type="checkbox"] {
   margin-top: 0.2rem;
   cursor: pointer;
